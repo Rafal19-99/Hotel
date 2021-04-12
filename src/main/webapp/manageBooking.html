@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 
+
+Sentra Template
+
+https://templatemo.com/tm-518-sentra
+
+-->
+
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
+    <link rel="stylesheet" href="css/form.css">
+
+
+	
+	<script  src="js/jquery-1.11.2.min.js"></script>
+	<script  src="js/MyJS/checkForm.js"> </script>
+	<script  src="js/MyJS/sendToServer.js"></script>
+	<script  src="js/MyJS/manageBooking.js"> </script>
+
+
+</head>
+<body onload="allBooking()">
+	<div  id="navigation">
+	
+		<script>
+			 $("#navigation").load("navigation.html"); 
+  	     </script>
+
+	</div>
+	<div class="page-content">
+    	<section id="bookings" class="content-section">
+			<h2>Change date of booking</h2>
+			<form id="change" action="api/booking/changeDate" method="POST">
+				<input required type="number" id="id" name="id" min="0" placeholder="Booking id" /><br />
+				<input required type="date" id="newCheckIn" name="newCheckIn" onchange="setMinDateForCheckOut()"  > <br />
+				<input required type="date" id="newCheckOut" name="newCheckOut" > <br />
+
+				<button onclick="changeBookingDate(this.form)">Change date</button>
+			</form>
+				
+			</section>
+			<section id="cancel" class="content-section">
+			<span id="book"></span>
+			<button onclick="cancel()">Cancel booking </button>
+			
+			
+			<table id="table" class="table   table-responsive table-bordered  table-hover w-auto"></table>
+	
+	
+						
+			
+        </section>
+
+    </div>
+
+</body>
+</html>

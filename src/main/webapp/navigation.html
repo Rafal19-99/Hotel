@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 
+
+Sentra Template
+
+https://templatemo.com/tm-518-sentra
+
+-->
+	<meta charset="utf-8">
+
+	
+	<script>
+        var didScroll;
+        var lastScrollTop = 0;
+        var delta = 5;
+        var navbarHeight = $('header').outerHeight();
+
+        $(window).scroll(function(event){
+            didScroll = true;
+        });
+
+        setInterval(function() {
+            if (didScroll) {
+                hasScrolled();
+                didScroll = false;
+            }
+        }, 250);
+
+        function hasScrolled() {
+            var st = $(this).scrollTop();
+            
+            if(Math.abs(lastScrollTop - st) <= delta)
+                return;
+
+            if (st > lastScrollTop && st > navbarHeight){
+                $('header').removeClass('nav-down').addClass('nav-up');
+            } else {
+                if(st + $(window).height() < $(document).height()) {
+                    $('header').removeClass('nav-up').addClass('nav-down');
+                }
+            }
+            
+            lastScrollTop = st;
+        }
+    </script>	
+
+</head>
+
+<body >
+
+
+
+        <header class="nav-down responsive-nav hidden-lg hidden-md">
+            <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--/.navbar-header-->
+            <div id="main-nav" class="collapse navbar-collapse">
+                <nav >
+                    <ul>
+                        <li class="nav-item " ><a class="nav-link " href="nav.html#top">Main</a></li>
+                        <li class="nav-item "><a class="nav-link " href="cleanRoom.html#act">Clean</a></li>
+                        <li class="nav-item "><a class="nav-link " href="manageBooking.html#bookings">Manage Booking</a></li>
+                        <li class="nav-item"><a class="nav-link" href="checkIn.html#top">CheckIn</a></li>
+                        <li class="nav-item"><a class="nav-link" href="checkOut.html#top">CheckOut </a></li>
+						<li class="nav-item"><a class="nav-link" href="managerPanel.html#hire">Manager Panel </a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="sidebar-navigation hidde-sm hidden-xs">
+			<div class="logo">
+                <a href="#"><em>HOTEL</em></a>
+            </div>
+            <nav>
+                <ul >
+                    <li class="nav-item ">
+                        <a class="nav-link " href="nav.html#top">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            Main Page
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="cleanRoom.html#act">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            Clean Room
+                        </a>
+                       
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="manageBooking.html#bookings">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            Manage Booking
+                        </a>
+                       
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="checkIn.html#top">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            checkIn
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="checkOut.html#top">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            CheckOut 
+                        </a>
+                    </li>
+					 <li class="nav-item">
+                        <a class="nav-link" href="managerPanel.html#hire">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            Manager Panel 
+                        </a>
+                    </li>
+					
+					
+                </ul>
+            </nav>
+        </div>
+
+
+
+    <script src="js/bootstrap.min.js"></script>
+
+
+    <script>
+        // Hide Header on on scroll down
+        var didScroll;
+        var lastScrollTop = 0;
+        var delta = 5;
+        var navbarHeight = $('header').outerHeight();
+
+        $(window).scroll(function(event){
+            didScroll = true;
+        });
+
+        setInterval(function() {
+            if (didScroll) {
+                hasScrolled();
+                didScroll = false;
+            }
+        }, 250);
+
+        function hasScrolled() {
+            var st = $(this).scrollTop();
+            
+            // Make sure they scroll more than delta
+            if(Math.abs(lastScrollTop - st) <= delta)
+                return;
+            
+            // If they scrolled down and are past the navbar, add class .nav-up.
+            // This is necessary so you never see what is "behind" the navbar.
+            if (st > lastScrollTop && st > navbarHeight){
+                // Scroll Down
+                $('header').removeClass('nav-down').addClass('nav-up');
+            } else {
+                // Scroll Up
+                if(st + $(window).height() < $(document).height()) {
+                    $('header').removeClass('nav-up').addClass('nav-down');
+                }
+            }
+            
+            lastScrollTop = st;
+        }
+    </script>
+
+ 
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 
+
+Sentra Template
+
+https://templatemo.com/tm-518-sentra
+
+-->
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
+    <link rel="stylesheet" href="css/form.css">
+
+
+
+	<script  src="js/jquery-1.11.2.min.js"></script>
+	<script  src="js/MyJS/checkForm.js"> </script>
+	<script  src="js/MyJS/sendToServer.js"></script>
+	<script  src="js/MyJS/managerPanel.js"></script>
+
+</head>
+<body onload="allEmplyee()">
+	<div  id="navigation">
+	
+		<script >
+			 $("#navigation").load("navigation.html"); 
+  		 </script>
+
+	</div>
+	
+	<div class="page-content">
+
+    	<section id="hire" class="content-section">
+			
+			<form id="register" action="api/manage" >
+			<h2> Add Employee</h2>
+				<input required type="text" name="name" placeholder="Name"  /><br />
+			 	<input required type="text" name="surname" placeholder="Surname"  /><br />
+				<input required type="text" name="login" placeholder="Login"  /><br />
+				<input required type="password" name="password" placeholder="Password"  /><br />
+			 	<input required type="email" name="email" placeholder="Email"  /><br />
+			 	<select name="position">
+			 		 <option value="Cleaner">Cleaner</option>
+			   		 <option value="Receptionist">Receptionist</option>
+			  		 <option value="Manager">Manager</option>
+			 	</select> <br />
+	 	
+	 			<button   id="add" onclick="addEmployee(this.form)">Hire</button>
+	 	
+			</form >
+			
+        </section>
+        <section id="fire" class="content-section">
+			<h2>Employees</h2>
+			<table id="table" class="table   table-responsive table-bordered  table-hover w-auto" ></table><br />
+			<span id="activeUser"></span><br />
+			<button  id="delete" onclick="fireEmployee()">Fire</button><br />
+			
+        </section>
+        <section id="changePass" class="content-section">
+			<form id="changePassword" action="api/user/changePassword">
+				Whom(login)	<input  required type="text" id="log" name = "log"><br />
+				New Password<input required type="password" name="newPassword"><br />
+				<button  id="change" onclick="changePassword(this.form)">Change password</button><br />
+			</form>
+        </section>
+        <section id="deleteBook" class="content-section">
+			<h2>Late Guest</h2>
+			<input type="number" min="0" value="0" id="late" />
+			<button onclick = "deleteBooking()" > Delete Booking</button><br />
+			<table id="table1" class="table   table-responsive table-bordered  table-hover w-auto" ></table>
+        </section>
+        
+        
+        
+    </div>
+
+
+
+</body>
+</html>

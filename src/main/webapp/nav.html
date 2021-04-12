@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 
+
+Sentra Template
+
+https://templatemo.com/tm-518-sentra
+
+-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/main.css">
+
+		
+		
+	<script  src="js/jquery-1.11.2.min.js"></script>
+	<script  src="js/MyJS/checkForm.js"></script>
+	<script  src="js/MyJS/sendToServer.js"></script>
+	<script  src="js/MyJS/nav.js"></script>
+			
+
+</head>
+
+<body onload="getUserInfo()">
+
+	<div  id="navigation">
+	
+		<script >
+			 $("#navigation").load("navigation.html"); 
+  		 </script>
+
+	</div>
+
+    <div class="page-content">
+    	<section id="top" class="content-section">
+			
+			<button onclick="logout()"> Logout</button><br/>
+			<span id="userDetails"></span><br />
+			<form action="api/user/changeMyPassword">
+				New Password <input required type="password" name="newPassword"><br />
+				<button onclick="changeMyPassword(this.form)">Change Password</button>
+				
+			</form>
+        </section>
+    </div>
+
+  
+</body>
+</html>
