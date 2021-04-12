@@ -20,3 +20,5 @@
 
 **Frontend**  
 In this project I wanted to focus on backend side therefore for frontend side I had used [Sentra Template](https://templatemo.com/tm-518-sentra) and edited it to my needs.
+
+I has used WildFly17 server with configuration as it is in standalone.xml
