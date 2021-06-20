@@ -41,6 +41,10 @@ public class UserServlet {
 	        .setExclusionStrategies(new CustomExclusionStrategy())
 	        .create();
 	
+	private final int NUMBER_OF_ITERATIONS_IN_ARGON2 = 8 ;
+	private final int NUMBER_OF_THREADS_IN_ARGON2 = 4;  
+	private final int KB_OF_MEMORY_IN_ARGON2 = 4096;
+	
 	
 	//GET methods
 	@GET
@@ -106,7 +110,7 @@ public class UserServlet {
 			return 0;
 		}
 
-		user.setPassword(argon2.hash(1, 65, 1, newPassword.toCharArray()));
+		user.setPassword(argon2.hash(NUMBER_OF_ITERATIONS_IN_ARGON2, NUMBER_OF_THREADS_IN_ARGON2, KB_OF_MEMORY_IN_ARGON2, newPassword.toCharArray()));
 		return 1;
 	}
 	

@@ -53,6 +53,10 @@ public class ManagerServlet {
 		        .setExclusionStrategies(new CustomExclusionStrategy())
 		        .registerTypeAdapter(LocalDate.class, new LocalDateAdapter())
 		        .create();
+	 
+	 	private final int NUMBER_OF_ITERATIONS_IN_ARGON2 = 8 ;
+		private final int NUMBER_OF_THREADS_IN_ARGON2 = 4;  
+		private final int KB_OF_MEMORY_IN_ARGON2 = 4096;
 	
 	 //DELETE methods
 	@DELETE
@@ -124,7 +128,7 @@ public class ManagerServlet {
 				
 		hotelDao.add(emp);
 		Argon2 argon2 = Argon2Factory.create(Argon2Types.ARGON2id);
-		password= argon2.hash(1, 65, 1, password.toCharArray());
+		password= argon2.hash(NUMBER_OF_ITERATIONS_IN_ARGON2, NUMBER_OF_THREADS_IN_ARGON2, KB_OF_MEMORY_IN_ARGON2, password.toCharArray());
 		
 		User user = User.builder()
 			.login(login)
