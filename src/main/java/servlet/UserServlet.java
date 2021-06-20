@@ -110,7 +110,7 @@ public class UserServlet {
 			return 0;
 		}
 
-		user.setPassword(argon2.hash(NUMBER_OF_ITERATIONS_IN_ARGON2, NUMBER_OF_THREADS_IN_ARGON2, KB_OF_MEMORY_IN_ARGON2, newPassword.toCharArray()));
+		user.setPassword(argon2.hash(NUMBER_OF_ITERATIONS_IN_ARGON2,KB_OF_MEMORY_IN_ARGON2, NUMBER_OF_THREADS_IN_ARGON2,  newPassword.toCharArray()));
 		return 1;
 	}
 	

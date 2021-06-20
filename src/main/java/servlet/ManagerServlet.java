@@ -128,7 +128,7 @@ public class ManagerServlet {
 				
 		hotelDao.add(emp);
 		Argon2 argon2 = Argon2Factory.create(Argon2Types.ARGON2id);
-		password= argon2.hash(NUMBER_OF_ITERATIONS_IN_ARGON2, NUMBER_OF_THREADS_IN_ARGON2, KB_OF_MEMORY_IN_ARGON2, password.toCharArray());
+		password= argon2.hash(NUMBER_OF_ITERATIONS_IN_ARGON2,KB_OF_MEMORY_IN_ARGON2, NUMBER_OF_THREADS_IN_ARGON2,  password.toCharArray());
 		
 		User user = User.builder()
 			.login(login)
