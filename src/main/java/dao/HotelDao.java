@@ -20,7 +20,7 @@ public interface HotelDao {
 	
 	public  List<?> getAll( Object serializableObject);
 	public Object findById(Object serializableObject, Object id);
-	public Object findByProprietes(Object serializableObject, Object id, Map<String, Object> propretes);
+
 
 	
 	

@@ -133,16 +133,4 @@ public class HotelDaoImplementations implements HotelDao{
 
 
 
-	@Override
-	public Object findByProprietes(Object serializableObject, Object id, Map<String, Object> propretes) {
-		if(serializableObject instanceof Serializable) {
-			return entityManager.find(serializableObject.getClass(), id,propretes);
-		}
-		return null;
-	}
-
-
-
-
-
 }
